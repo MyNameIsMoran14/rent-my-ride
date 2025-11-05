@@ -1,0 +1,216 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: #fff;
+  color: #111;
+  overflow-x: hidden;
+}
+
+/* Верхняя панель */
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 60px;
+  background: #000000;
+  border-bottom: 1px solid #000000;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo {
+  font-size: 28px;
+  font-weight: 700;
+  color: #fff;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+.nav a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.nav a:hover {
+  color: #d30a0a;
+}
+
+.nav-btn {
+  padding: 10px 25px;
+  border-radius: 8px;
+  border: 2px solid #d30a0a;
+  background: #d30a0a;
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.nav-btn:hover {
+  background: #d30a0a;
+  border-color: #d30a0a;
+}
+
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 60px;
+  height: 92vh;
+  background: #000;
+  color: #fff;
+  overflow-x: hidden; /* убираем боковую прокрутку */
+}
+
+.hero-content {
+  max-width: 45%;
+}
+
+.hero-image {
+  position: absolute;
+  right: -250px;
+  bottom: 0; /* можно отрегулировать, чтобы было по центру вертикально */
+}
+
+.hero-image img {
+  width: 1300px; /* крупная картинка */
+  height: auto;
+  border-radius: 12px;
+}
+
+
+.hero-buttons {
+  margin-top: 20px;
+  display: flex;
+  gap: 20px;
+}
+
+
+.hero h1 {
+  font-size: 56px;
+  margin-bottom: 20px;
+  line-height: 1.2;
+}
+
+.hero p {
+  font-size: 20px;
+  margin-bottom: 30px;
+  color: #fff;
+}
+
+
+
+
+.primary-btn {
+  padding: 18px 50px;
+  border: none;
+  border-radius: 10px;
+  background: #d30a0a;
+  color: #fff;
+  font-size: 18px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.primary-btn:hover {
+  background: #d30a0a;
+  transform: translateY(-2px);
+}
+
+.secondary-btn {
+  padding: 18px 50px;
+  border: 2px solid #fff;
+  border-radius: 10px;
+  background: transparent;
+  color: #fff;
+  font-size: 18px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.secondary-btn:hover {
+  background: rgba(255,255,255,0.1);
+}
+
+/* Features */
+.features {
+  display: flex;
+  justify-content: space-around;
+  background-image: url('../img/bg.gif'); /* твой GIF */
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: relative; /* обязательно для ::before */
+  z-index: 1;
+  align-items: center; /* выравниваем карточки по вертикали */
+  padding: 0 60px;     /* верхний/нижний паддинг убираем, чтобы высота была 92vh */
+  height: 92vh;        /* секция занимает 92% высоты экрана */
+}
+
+.features::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.6); /* полупрозрачный слой */
+  z-index: 0; /* ниже содержимого секции */
+}
+
+.feature-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  border-radius: 12px;
+  background-color: #000;
+  max-width: 280px;
+  padding: 0;
+  transition: transform 0.3s;
+  color: #fff; /* чтобы текст был виден на фоне */
+  position: relative;
+  z-index: 1;
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+}
+
+.feature-card img {
+  width: 100%;
+  height: 250px; /* фиксированная высота для всех картинок */
+  object-fit: cover; /* картинка заполнит блок и не деформируется */
+  border-radius: 12px 12px 0 0;
+}
+
+.feature-card h3 {
+  font-size: 20px;
+  margin: 15px 0 5px 0;
+  min-height: 40px; /* задаем минимальную высоту заголовка для одинаковости */
+}
+
+.feature-card p {
+  font-size: 16px;
+  color: #fff; /* или другой цвет на фоне */
+  margin: 0 10px 20px 10px;
+  min-height: 40px; /* чтобы описание тоже не прыгало */
+}
+
+/* Анимация плавного появления */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
