@@ -4,8 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Rent My Ride</title>
-  <link rel="stylesheet" href="css/style.css" />
-  <script src="js/app.js" defer></script> 
+  <link rel="stylesheet" href="../ride/css/style.css" />
+  <script src="../ride/js/app.js" defer></script> 
 </head>
 <body>
   <header class="topbar">
@@ -23,7 +23,7 @@
       <h1>Арендуй авто за пару кликов</h1>
       <p>Твоя поездка, твои правила</p>
       <div class="hero-buttons">
-        <button class="primary-btn">Начать аренду</button>
+        <button class="primary-btn" onclick="scrollToContact()">Начать аренду</button>
         <button class="secondary-btn">Посмотреть каталог</button>
       </div>
     </div>
@@ -51,6 +51,29 @@
       <p>Мы всегда рядом, чтобы помочь</p>
     </div>
   </section>
+
+  <section id="contact" class="contact-dark">
+    <div class="contact-container">
+      <h2 class="contact-title">ОСТАВЬ ЗАЯВКУ</h2>
+
+      <form class="contact-form-dark">
+        <div class="form-row">
+          <input type="text" placeholder="Имя" required>
+          <input type="text" placeholder="Город">
+        </div>
+        <div class="form-row">
+          <input type="email" placeholder="E-mail" required>
+          <input type="tel" placeholder="Телефон" required>
+        </div>
+        <div class="form-row">
+          <input type="text" placeholder="Сообщение" class="message-input">
+          <button type="submit" class="send-btn">➜</button>
+        </div>
+      </form>
+    </div>
+  </section>
+
+
 
 </body>
 </html>

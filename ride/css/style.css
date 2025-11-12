@@ -214,3 +214,95 @@ body {
   to { opacity: 1; transform: translateY(0); }
 }
 
+.contact-dark {
+  background: #0d0d0d;
+  color: #fff;
+  height: 92vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Inter', sans-serif;
+  position: relative;
+  overflow: hidden;
+}
+
+.contact-container {
+  width: 80%;
+  max-width: 900px;
+}
+
+.contact-title {
+  font-size: 72px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  text-align: left;
+  margin-bottom: 50px;
+}
+
+.contact-form-dark {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.form-row {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.contact-form-dark input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid #555;
+  color: #fff;
+  padding: 12px 5px;
+  font-size: 16px;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+.contact-form-dark input::placeholder {
+  color: #777;
+}
+
+.contact-form-dark input:focus {
+  border-bottom: 1px solid #d30a0a;
+}
+
+.message-input {
+  flex: 1;
+}
+
+.send-btn {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 24px;
+  cursor: pointer;
+  transition: color 0.3s, transform 0.2s;
+}
+
+.send-btn:hover {
+  color: #d30a0a;
+  transform: translateX(4px);
+}
+
+/* адаптив */
+@media (max-width: 768px) {
+  .contact-title {
+    font-size: 48px;
+    text-align: center;
+  }
+
+  .form-row {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .send-btn {
+    align-self: flex-end;
+  }
+}
