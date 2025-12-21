@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Каталог автомобилей | Rent My Ride</title>
+
+  <link rel="stylesheet" href="../ride/css/style.css" />
+  <link rel="stylesheet" href="../ride/css/cars.css" />
+  <script defer src="../ride/js/cars.js"></script>
+</head>
+<body>
+
+  <!-- HEADER как на главной -->
+  <header class="topbar">
+    <div class="logo">Rent My Ride</div>
+    <nav class="nav">
+      <a href="car.html" class="active">Каталог</a>
+      <a href="tariffs.html">Тарифы</a>
+      <a href="#">Поддержка</a>
+      <button class="nav-btn">Войти</button>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section class="catalog-hero">
+    <div class="catalog-hero-inner">
+      <h1>Наш автопарк</h1>
+      <p>Выбери авто под свои задачи и стиль</p>
+    </div>
+  </section>
+
+  <!-- ФИЛЬТРЫ (задел) -->
+  <section class="catalog-filters">
+    <select>
+      <option>Все классы</option>
+      <option>Эконом</option>
+      <option>Бизнес</option>
+      <option>Премиум</option>
+    </select>
+
+    <select>
+      <option>Цена</option>
+      <option>До €100</option>
+      <option>€100–200</option>
+      <option>€200+</option>
+    </select>
+  </section>
+
+  <!-- КАТАЛОГ -->
+  <section class="catalog-wrapper">
+    <div id="cars-container" class="cars-grid"></div>
+  </section>
+
+  
+
+</body>
+</html>

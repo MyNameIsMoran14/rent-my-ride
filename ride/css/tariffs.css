@@ -1,0 +1,144 @@
+:root {
+  --accent: #d30a0a;
+  --dark: #000;
+  --text: #fff;
+  --muted: #aaa;
+  --radius: 12px;
+  --transition: 0.3s ease;
+}
+
+/* HERO */
+.tariffs-hero {
+  padding: 40px 60px 60px;
+  background: #000;
+  color: #fff;
+}
+
+.tariffs-hero h1,
+.tariffs-hero p {
+  max-width: 700px;
+  font-size: 200px;   /* ← ВОТ ЭТО УМЕНЬШАЕТ ШИРИНУ */
+}
+
+
+/* VIDEO SECTION */
+.video-bg {
+  position: relative;
+  min-height: 100vh;
+  padding: 80px 60px;
+  overflow: hidden;
+}
+
+/* Video */
+.bg-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+/* Overlay */
+.video-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.65);
+  z-index: 1;
+}
+
+/* Content */
+.tariffs-content {
+  position: relative;
+  z-index: 2;
+
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 40px;
+}
+
+/* Card */
+.tariff-card {
+  background: #000;
+  border-radius: var(--radius);
+  padding: 35px 30px;
+  color: #fff;
+  transition: transform var(--transition);
+}
+
+.tariff-card:hover {
+  transform: translateY(-6px);
+}
+
+.tariff-card.featured {
+  border: 2px solid var(--accent);
+}
+
+/* Text */
+.tariff-card h2 {
+  font-size: 26px;
+  margin-bottom: 8px;
+}
+
+.tariff-desc {
+  color: var(--muted);
+  margin-bottom: 25px;
+}
+
+.tariff-price {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--accent);
+  margin-bottom: 25px;
+}
+
+/* List */
+.tariff-list {
+  list-style: none;
+  margin-bottom: 30px;
+}
+
+.tariff-list li {
+  margin-bottom: 12px;
+  font-size: 16px;
+  padding-left: 18px;
+  position: relative;
+}
+
+.tariff-list li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+}
+
+/* Button */
+.tariff-btn {
+  width: 100%;
+  padding: 14px;
+  background: var(--accent);
+  border: none;
+  border-radius: 10px;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.tariff-btn:hover {
+  transform: translateY(-2px);
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .tariffs-hero,
+  .video-bg {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .tariffs-hero h1 {
+    font-size: 40px;
+  }
+}

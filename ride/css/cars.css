@@ -1,0 +1,205 @@
+/* =========================
+   CATALOG — RENT MY RIDE
+   ========================= */
+
+:root {
+  --accent: #d30a0a;
+  --dark: #000;
+  --text: #fff;
+  --muted: #aaa;
+  --radius: 12px;
+  --transition: 0.3s ease;
+}
+
+/* HERO каталога */
+
+.catalog-hero {
+  padding: 80px 60px 40px;
+  background: #000;
+  color: #fff;
+
+}
+
+.catalog-hero-inner {
+  max-width: 70px;   /* ← ВОТ ЭТО ширина плашки */
+}
+
+.catalog-hero h1 {
+  font-size: 56px;
+  margin-bottom: 15px;
+}
+
+.catalog-hero p {
+  font-size: 20px;
+  color: #ccc;
+}
+
+.catalog-hero h1,
+.catalog-hero p {
+  max-width: 700px;   /* регулируй: 600–800px */
+}
+/* Фильтры */
+.catalog-filters {
+  display: flex;
+  gap: 20px;
+  padding: 20px 60px 40px;
+  background: #000;
+}
+
+/* кастомный select */
+.catalog-filters select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+
+  background-color: #000;
+  color: #fff;
+
+  border: 1px solid #333;
+  border-radius: 8px;
+
+  padding: 12px 44px 12px 16px;
+  font-size: 16px;
+  cursor: pointer;
+
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='white' viewBox='0 0 16 16'%3E%3Cpath d='M1.5 5l6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 16px center;
+  background-size: 14px;
+
+  transition: border-color 0.3s;
+}
+
+.catalog-filters select:hover,
+.catalog-filters select:focus {
+  border-color: #d30a0a;
+  outline: none;
+}
+
+/* dropdown options */
+.catalog-filters option {
+  background: #000;
+  color: #fff;
+}
+
+/* Обёртка каталога */
+.catalog-wrapper {
+  min-height: 65vh;
+  padding: 0 60px 80px;
+  background-image: url('../img/bg2.gif');
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.catalog-wrapper::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.65);
+  z-index: 0;
+}
+
+/* Сетка */
+.cars-grid {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 40px;
+}
+
+/* Карточка авто */
+.car-card {
+  background: #000;
+  border-radius: var(--radius);
+  overflow: hidden;
+  color: #fff;
+  transition: transform var(--transition);
+  animation: fadeIn 0.6s ease forwards;
+  opacity: 0;
+}
+
+.car-card:hover {
+  transform: translateY(-6px);
+}
+
+/* Картинка */
+.car-card img {
+  width: 100%;
+  height: 230px;
+  object-fit: cover;
+  border-radius: 12px 12px 0 0;
+}
+
+/* Инфо */
+.car-info {
+  padding: 22px;
+}
+
+.car-info h2 {
+  font-size: 22px;
+  margin-bottom: 8px;
+}
+
+.car-info p {
+  font-size: 16px;
+  color: var(--muted);
+}
+
+/* Низ карточки */
+.car-bottom {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Цена */
+.car-price {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--accent);
+}
+
+/* Кнопка */
+.rent-btn {
+  padding: 10px 22px;
+  border-radius: 8px;
+  border: 2px solid var(--accent);
+  background: var(--accent);
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.rent-btn:hover {
+  transform: translateY(-2px);
+}
+
+/* Анимация */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Адаптив */
+@media (max-width: 768px) {
+  .catalog-hero,
+  .catalog-filters,
+  .catalog-wrapper {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .catalog-hero h1 {
+    font-size: 40px;
+  }
+}
